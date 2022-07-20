@@ -9,7 +9,7 @@
 namespace sp {
 
 class ForwardEuler final : public Integrator {
-public:
+private:
   State step(const State &state, const Dynamics &dynamics, double t,
              double dt) const override {
     assert(dt > 0);

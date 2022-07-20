@@ -38,10 +38,11 @@ public:
     }
   }
 
+  virtual ~Integrator() = default;
+
+protected:
   virtual State step(const State &state, const Dynamics &dynamics, double t,
                      double dt) const = 0;
-
-  virtual ~Integrator() = default;
 };
 
 } // namespace sp

@@ -41,10 +41,6 @@ int main() {
 
   std::cout << initial_state << "\n";
 
-  // const auto stepped_state =
-  //     integrator.step(pen.get_mutable_state(), dynamics, initial_time, 0.1);
-  // std::cout << stepped_state << "\n";
-
   integrator.integrate(pen.get_mutable_state(), dynamics, initial_time,
                        duration, step_size);
   std::cout << pen.get_state() << "\n";

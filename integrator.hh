@@ -24,7 +24,7 @@ public:
                  const double duration, const double step_size = 0.01) const {
     assert(duration >= 0);
     assert(step_size > 0);
-    const int num_steps = std::floor(duration / step_size);
+    const int num_steps = static_cast<int>(std::floor(duration / step_size));
     const double remainder = duration - (num_steps * step_size);
 
     for (int i = 0; i < num_steps; ++i) {

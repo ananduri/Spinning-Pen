@@ -165,6 +165,12 @@ Together, these assumptions would allow us to figure out the linear and angular 
 Again, we'd need to use the pen's mass and moment of inertia, but that information would allow us to return a ~StateDelta~ when the collision time is reached.
 The ~StateDelta~ struct itself would also have to be modified to hold a change in the pen's axis of rotation, in case the pen hits the surface at an angle.
 
+*** Templating the simulation code
+A way to improve the architecture of the simulation itself could be to template the integrator code.
+Right now, it is specialized to take in the ~State~ type that corresponds to the state of the pen.
+Since the pen is the only object being simulated right now, this is currently acceptable, but if we wanted to generalize the code to work on different types of objects or states, allowing the ~State~ and ~Dynamics~ objects to be template parameters makes sense.
+The code in the integrator files has been left in header files anticipating this purpose.
+
 
 ** Building and running the code
 Building the code requires a C++ compiler supporting C++17 or later, and Bazel installed on a Linux system.
